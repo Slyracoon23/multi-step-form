@@ -18,6 +18,7 @@ import { AnimatePresence } from "framer-motion";
 import { containerVariants } from "../variants/containerVariants";
 import { firstStepVariants } from "../variants/firstStepVariants";
 import { confirmVariants } from "../variants/confirmVariants";
+import Explore from "../components/DaoCards/Explore";
 
 export const AppContainer = () => {
   const { activeStep, direction } = useContext(AppContext);
@@ -56,6 +57,8 @@ export const AppContainer = () => {
         {activeStep <= 4 && <Footer />}
       </div>
 
+      <Explore/>
+
       <div className=" hidden lg:flex lg:items-center lg:justify-center lg:min-h-screen">
         <div className="step-container-box-lg ">
           <Sidebar activeStep={activeStep} />
@@ -67,7 +70,7 @@ export const AppContainer = () => {
               exit={{ opacity: 0 }}
               className="col-span-2 min-h-[40vh]  "
             >
-              {activeStep === 1 && <Step1 />}
+              {activeStep === 1 &&  <Step1/> }
 
               {activeStep === 2 && <Step2 />}
 
